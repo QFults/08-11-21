@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,23 +12,72 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- <h1 id="myHeading">Hello World!</h1> -->
-  <div id="myDiv"></div>
-  <button id="myBtn">Click Me</button>
+  <!-- <div id="myDiv"></div>
+  <button id="myBtn">Click Me</button> -->
+  <!-- <h1 id="count">0</h1>
+  <button id="increment">+</button>
+  <button id="decrement">-</button>
+  <button id="reset">reset</button> -->
+  <form>
+    <p>
+      <label for="email">email</label>
+      <input type="email" name="email" id="email">
+    </p>
+    <p>
+      <label for="password">password</label>
+      <input type="password" name="password" id="password">
+    </p>
+    <!-- thisIsCamelCase -->
+    <button id="logIn">Log In</button>
+  </form>
+  <div id="user"></div>
   <script>
-    let isShown = false
-    
-    document.getElementById('myBtn').addEventListener('click', () => {
-      if (isShown) {
-        isShown = false
-        document.getElementById('myDiv').innerHTML = ''
-      } else {
-        isShown = true
-        document.getElementById('myDiv').innerHTML = '<h1>Hello World!</h1>'
-      }
+    document.getElementById('logIn').addEventListener('click', event => {
+      event.preventDefault()
+
+      let email = document.getElementById('email').value
+      let password = document.getElementById('password').value
+
+      document.getElementById('user').innerHTML = `
+        <h3>${email}</h3>
+        <h3>${password}</h3>
+      `
+
+      document.getElementById('email').value = ''
+      document.getElementById('password').value = ''
     })
+    // let count = 0
+
+    // document.getElementById('increment').addEventListener('click', () => {
+    //   count++
+    //   document.getElementById('count').textContent = count
+    // })
+
+    // document.getElementById('decrement').addEventListener('click', () => {
+    //   count--
+    //   document.getElementById('count').textContent = count
+    // })
+
+    // document.getElementById('reset').addEventListener('click', () => {
+    //   count = 0
+    //   document.getElementById('count').textContent = 0
+    // })
+
+    // let isShown = false
+
+    // document.getElementById('myBtn').addEventListener('click', () => {
+    //   if (isShown) {
+    //     isShown = false
+    //     document.getElementById('myDiv').innerHTML = ''
+    //   } else {
+    //     isShown = true
+    //     document.getElementById('myDiv').innerHTML = '<h1>Hello World!</h1>'
+    //   }
+    // })
 
     // document.getElementById('myHeading').className = 'red'
     // document.getElementById('myHeading').style.color = 'red'
@@ -46,7 +96,7 @@
     // btnElem.classList.add('btn-primary')
 
     // document.getElementById('myDiv').append(btnElem)
-    
+
     // let a = 5
     // let a = 5
     // let a = 5
@@ -118,4 +168,5 @@
     // }
   </script>
 </body>
+
 </html>
