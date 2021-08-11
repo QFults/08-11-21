@@ -5,13 +5,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
 </head>
 <body>
 
-  <h1 id="myHeading">Hello World!</h1>
+  <!-- <h1 id="myHeading">Hello World!</h1> -->
   <div id="myDiv"></div>
+  <button id="myBtn">Click Me</button>
   <script>
+    let isShown = false
+    
+    document.getElementById('myBtn').addEventListener('click', () => {
+      if (isShown) {
+        isShown = false
+        document.getElementById('myDiv').innerHTML = ''
+      } else {
+        isShown = true
+        document.getElementById('myDiv').innerHTML = '<h1>Hello World!</h1>'
+      }
+    })
 
+    // document.getElementById('myHeading').className = 'red'
+    // document.getElementById('myHeading').style.color = 'red'
     // document.querySelector('#myHeading')
     // console.log(document.getElementById('myHeading'))
     // document.getElementById('myHeading').textContent = 'Goodbye World'
